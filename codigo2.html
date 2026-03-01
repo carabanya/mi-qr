@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Validación de Múltiples Códigos</title>
+</head>
+<body>
+
+    <div id="resultado"></div>
+
+    <script>
+        // 1. Creamos una lista (Array) con los 5 códigos permitidos
+        const codigosValidos = ["98354", "83549", "35498", "54983", "49835"];
+
+        let entrada = prompt("Introduce el codigo");
+
+        // 2. Usamos .includes() para saber si lo que escribió el usuario está en la lista
+        if (codigosValidos.includes(entrada)) {
+            alert("Sistema Desbloqueado, validación completada");
+            
+            document.getElementById("resultado").innerHTML = `
+                <h2 style="color: green;">Nivel de competencia científica: APROBADO.</h2>
+                <p>El Sistema Digestivo Sintético vuelve a funcionar.</p>
+                <p>Flujo peristáltico restaurado.</p>
+                <p>Producción energética estabilizada.</p>
+                <p>G.A.S.T.R.O. declara:</p>
+                <blockquote>"La biología humana está a salvo gracias a vosotros."</blockquote>
+            `;
+        } 
+        else {
+            alert("El codigo es incorrecto");
+            document.getElementById("resultado").innerHTML = "<h2 style='color:red;'>Acceso Denegado: Código no reconocido</h2>";
+        }
+    </script>
+
+</body>
+</html>
